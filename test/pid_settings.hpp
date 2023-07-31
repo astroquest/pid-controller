@@ -8,7 +8,7 @@ double ki = 0.01;
 double kd = 0.01;
 double kt = 0.001;
 
-double saturation_limit_min = -0.105;
-double saturation_limit_max = 0.105;
+double limit_min = -0.105;
+double limit_max = 0.105;
 
 #endif
