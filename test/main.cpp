@@ -4,6 +4,7 @@
 #include <fstream>
 
 #include "../src/pid.hpp"
+#include "pid_settings.hpp"
 #include "simulation/model.hpp"
 
 void dumpSim(std::string file_name, std::vector<double> time, std::vector<double> input_vec, std::vector<double> output_vec){
@@ -20,7 +21,7 @@ void dumpSim(std::string file_name, std::vector<double> time, std::vector<double
 
 int main(){
     Model model(0);
-    Pid pid(0.1, 1e-2, 0.01, 0.1, 1);
+    Pid pid(sampling_time, kp, kd, ki, kt, saturation_limit_min, saturation_limit_max);
     
     double reference = 1;
     double measurement;
@@ -30,7 +31,7 @@ int main(){
     std::vector<double> input_vec;
     std::vector<double> output_vec;
 
-    for(int i = 0; i < 100; i++){
+    for(int i = 0; i < 1000; i++){
         measurement = model.x;
 
         time.push_back(i);

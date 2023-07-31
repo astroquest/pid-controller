@@ -3,7 +3,7 @@
 
 class Pid{
     public:
-        Pid(double, double, double, double, double);
+        Pid(double, double, double, double, double, double, double);
 
         void setGains(double, double, double, double);
 
@@ -14,9 +14,10 @@ class Pid{
         double kd;
         double kt;
 
-    // private:
+    private:
         double getIntegralAction(double);
         double getDerivativeAction(double);
+        double checkSaturation(double);
         
         double measurement;
         double error;
@@ -28,6 +29,9 @@ class Pid{
         double prev_error;
         double prev_integral_action;
         double prev_derivative_action;
+
+        double saturation_limit_min;
+        double saturation_limit_max;
 
         double sampling_time;
 };

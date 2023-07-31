@@ -6,6 +6,7 @@ set(
     src/pid.cpp
     src/pid.hpp
     test/main.cpp
+    test/pid_settings.hpp
     test/simulation/model.cpp
     test/simulation/model.hpp
 )
