@@ -21,7 +21,7 @@ void dumpSim(std::string file_name, std::vector<double> time, std::vector<double
 
 int main(){
     Model model(0);
-    Pid pid(sampling_time, kp, kd, ki, kt, saturation_limit_min, saturation_limit_max);
+    Pid pid(sampling_time, kp, kd, ki, kt, limit_min, limit_max);
     
     double reference = 1;
     double measurement;
